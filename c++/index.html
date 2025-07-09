@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .grid {
+      display: flex;
+      justify-content: space-around;
+      gap: 10px;
+    }
+
+    .card {
+      width: 30%;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .card button {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn-remove {
+      background-color: #e74c3c;
+    }
+
+    .btn-hide {
+      background-color: #3498db;
+    }
+
+    .btn-reset {
+      background-color: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Image 1">
+        <button class="btn-remove">Remove</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Image 2">
+        <button class="btn-hide">Hide</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Image 3">
+        <button class="btn-reset">Reset All</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
