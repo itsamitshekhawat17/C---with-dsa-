@@ -17,7 +17,7 @@ int largestElement(int arr[] , int n){
 }
 
 int main(){
-    int arr[]= {2,4,3,6,8,9,0,1};
+    int arr[]= {3,4,3,6,8,9,0,1};
     int n = sizeof(arr) / sizeof(arr[0]);
 
     cout<<"largest element : "<<largestElement(arr ,n);
