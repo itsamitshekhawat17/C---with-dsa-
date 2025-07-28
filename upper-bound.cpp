@@ -9,7 +9,7 @@ int binarysearch(vector<int>& nums,int x){
     while(st<=end){
         int mid = (st+end)/2;
 
-        if(nums[mid]>=x){
+        if(nums[mid]>x){
             ans = mid;
 
             end = mid -1 ;
