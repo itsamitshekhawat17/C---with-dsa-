@@ -19,7 +19,7 @@ int binarysearch(vector<int>& nums,int target ){
                 return mid ;
             }
         }
-        return -1;
+        return st;
     
     }
 
