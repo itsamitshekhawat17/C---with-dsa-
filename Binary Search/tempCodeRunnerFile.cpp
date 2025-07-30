@@ -1,1 +1,1 @@
-int mid = (st+end)/2;
+            ans = mid;
