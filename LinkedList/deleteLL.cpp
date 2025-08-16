@@ -32,37 +32,26 @@ Node* convertArr2LL(vector<int> &arr){
     }
     return head;
 }
-
-int lengthLL(Node* head){ //for this always head will be given 
-    int count = 0;
-    Node* temp = head;
-     while(temp){
-        
-        temp = temp->next;
-        count++;
+void print(Node* head){
+    while(head!=NULL){
+        cout<<head->data<<" ";
+        head = head->next;
     }
-    return count;
 }
 
-int checkpresent(Node* head , int val){
-     Node* temp = head;
-     while(temp){
-        if(temp->data==val) return 1;
-        temp = temp->next;
-        
-    }
-    return 0;
+Node* removehead(Node* head){
+    if(head == NULL) return head;
+    Node* temp = head;
+    head =head->next;
+    delete temp;
+    return head;
 }
 
 int main(){
     vector<int> arr ={2,3,5,4};
     Node* head = convertArr2LL(arr);
-    // cout<<lengthLL(head);
-    cout<<checkpresent(head ,2);
-    // Node* temp = head;
-    // while(temp){
-    //     cout<<temp->data<<" ";
-    //     temp = temp->next;
-    // }
+    head = removehead(head);
+    print(head);
+  
 }
 
