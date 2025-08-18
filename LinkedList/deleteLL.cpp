@@ -38,7 +38,7 @@ void print(Node* head){
         head = head->next;
     }
 }
-
+//deleting head
 Node* removehead(Node* head){
     if(head == NULL) return head;
     Node* temp = head;
@@ -47,6 +47,7 @@ Node* removehead(Node* head){
     return head;
 }
 
+//deleting tail
 Node* removetail(Node* head){
     if(head ==NULL || head->next == NULL) return NULL;
     Node* temp = head ;
@@ -58,11 +59,66 @@ Node* removetail(Node* head){
     return head ;
 }
 
+// deleting the element by its kth position 
+Node* removek(Node*head , int k){
+
+    if(head ==NULL){
+        return head;
+    }
+    if(k==1){
+        Node*temp= head;
+        head = head->next;
+        free(temp);
+        return head;
+    }
+   int count =0 ;
+   Node*temp= head ;
+   Node*prev = NULL ;
+   while(temp!=NULL){
+    count ++;
+    if(count ==k){
+        prev->next = prev->next->next;
+        free(temp);
+        break;
+    }
+    prev = temp;
+    temp = temp->next;
+   }
+return head;
+}
+ // delete the element by its value
+
+Node* removeel(Node*head , int el){
+
+    if(head ==NULL){
+        return head;
+    }
+    if(head->data == el){
+        Node*temp= head;
+        head = head->next;
+        free(temp);
+        return head;
+    }
+   Node*temp= head ;
+   Node*prev = NULL ;
+   while(temp!=NULL){
+    
+    if(temp->data ==el){
+        prev->next = prev->next->next;
+        free(temp);
+        break;
+    }
+    prev = temp;
+    temp = temp->next;
+   }
+return head;
+}
+
 int main(){
     vector<int> arr ={2,3,5,4};
     Node* head = convertArr2LL(arr);
     // head = removehead(head);
-    head = removetail(head);
+    head = removeel(head,5);
     print(head);
   
 }
