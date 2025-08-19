@@ -39,15 +39,29 @@ void print(Node* head){
     }
 }
 Node* inserthead(Node*head ,int val){
-    Node*temp = new Node(val,head);
-    return temp;
+    return new Node(val,head);
+    
+}
+
+Node* insertTail(Node*head,int val){
+    if(head==NULL){
+        return new Node(val);
+    }
+    Node*temp = head;
+    while(temp->next != NULL){
+        temp = temp->next;
+
+    }
+    Node* newNode = new Node(val);
+    temp->next = newNode;
+    return head;
 }
 
 int main(){
     vector<int> arr ={2,3,5,4};
     Node* head = convertArr2LL(arr);
     // head = removehead(head);
-    head = inserthead(head,100);
+    head = insertTail(head,100);
     print(head);
   
 }
